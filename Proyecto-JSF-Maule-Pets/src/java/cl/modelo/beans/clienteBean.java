@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
-/*123*/
+
 @ManagedBean(name="clienteBean")
 //@Entity
 public class clienteBean implements Serializable {
