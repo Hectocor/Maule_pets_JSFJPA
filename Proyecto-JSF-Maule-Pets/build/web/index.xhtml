@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Pagina de inicio</title>
+    </h:head>
+    <h:body>
+        <h:form >
+            <p:growl globalOnly="true"/>
+            <p:panel header="Pagina de Autentificacion" style="margin: 0px auto;margin-top: 100px;">
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-8,ui-grid-col-2" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:outputLabel value="ID:"/>
+                    <p:inputText id="rut" value="#{veterinarioBean.veterinario.rut}" placeholder="Login de usuario" required="true"/>
+                    <p:message for="rut"/>
+                    <p:outputLabel value="rut:"/>
+                    <p:password id="password" value="#{veterinarioBean.veterinario.password}" placeholder="password" required="true"/>
+                    <p:message for="password"/>
+                    <h:column></h:column>
+                    <p:commandButton value="Ingresar" action="#{veterinarioBean.eventoBotonIngresar()}" ajax="false"/>
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>

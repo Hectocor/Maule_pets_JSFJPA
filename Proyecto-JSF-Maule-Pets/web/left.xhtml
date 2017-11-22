@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <!--  -->
+
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="form1"  rendered="#{veterinarioBean.veterinario.rol eq 'VETERINARIOJEFE'}">
+            <p:panelMenu>
+                <p:submenu label="Menu Veterinario">
+                    <p:menuitem url="http://www.primefaces.org" value="Ingresar Veterinario" icon="ui-icon-disk"/>
+                    <p:menuitem url="http://www.primefaces.org" value="Editar Veterinario" icon="ui-icon-pencil"/>
+                    <p:menuitem url="http://www.primefaces.org" value="Eliminar Veterinario" icon="ui-icon-trash"/>
+                    <p:menuitem url="http://www.primefaces.org" value="Lista Veterinarios" icon="ui-icon-link"/>
+                    <p:menuitem value="Cerrar Sesion" action="#{veterinarioBean.cerrarSesion()}" icon="ui-icon-locked" ajax="false"/>
+                </p:submenu>
+            </p:panelMenu>
+            <p:panelMenu>
+                <p:submenu label="Menu cliente">
+                    <p:menuitem url="http://www.primefaces.org" value="Primefaces" icon="ui-icon-link"/>
+                    <p:menuitem value="Ingresar Cliente" outcome="ingresar_cliente.xhtml" icon="ui-icon-disk"/>
+                    <p:menuitem value="Editar Cliente"  icon="ui-icon-pencil"/>
+                    <p:menuitem value="Lista Clientes"  icon="ui-icon-person"/>
+                    <p:menuitem url="http://www.google.cl" value="Google" icon="ui-icon-link"/>
+                </p:submenu>
+            </p:panelMenu>
+            <p:panelMenu>
+                <p:submenu label="Menu Mascota">
+                    <p:menuitem url="http://www.primefaces.org" value="Ingresar Mascota" icon="ui-icon-disk"/>
+                    <p:menuitem url="http://www.primefaces.org" value="Editar Mascota" icon="ui-icon-pencil"/>
+                    <p:menuitem url="http://www.primefaces.org" value="Eliminar Mascota" icon="ui-icon-trash"/>
+                    <p:menuitem url="http://www.primefaces.org" value="Lista Mascotas" icon="ui-icon-link"/>
+                </p:submenu>
+            </p:panelMenu>
+
+        </h:form>
+        <h:form id="form2" rendered="#{veterinarioBean.veterinario.rol eq 'VETERINARIO'}">
+            <p:panelMenu>
+                <p:submenu label="Menu Veterinario">
+                    <p:menuitem url="http://www.primefaces.org" value="Primefaces" icon="ui-icon-link"/>
+                    <p:menuitem value="Cerrar Sesion" action="#{veterinarioBean.cerrarSesion()}" icon="ui-icon-locked" ajax="false"/>
+                </p:submenu>
+            </p:panelMenu>
+            <p:panelMenu>
+                <p:submenu label="Menu Vacuna">
+                    <p:menuitem url="http://www.primefaces.org" value="Primefaces" icon="ui-icon-link"/>
+                </p:submenu>
+            </p:panelMenu>
+            <p:panelMenu>
+                <p:submenu label="Menu Procedimiento">
+                    <p:menuitem url="http://www.primefaces.org" value="Primefaces" icon="ui-icon-link"/>
+                </p:submenu>
+            </p:panelMenu>
+        </h:form>
+    </h:body>
+</html>

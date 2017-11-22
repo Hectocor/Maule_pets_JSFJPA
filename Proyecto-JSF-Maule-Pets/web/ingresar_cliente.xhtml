@@ -1,0 +1,62 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="./plantilla.xhtml">
+    <ui:define name="title">
+        Ingresar Cliente
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form id="form01" rendered="#{veterinarioBean.veterinario.rol eq 'VETERINARIOJEFE'}">
+            <p:growl globalOnly="true"/>
+            <p:panel header="Formulario Ingreso cliente">
+                <p:panelGrid columns="3" columnClasses="ui-grid-col-2,ui-grid-col-8,ui-grid-col-2" layout="grid" styleClass="ui-panelgrid-blank">
+                    <p:outputLabel value="rut: "/>
+                    <p:inputText id="rut" value="#{clienteBean.cliente.rut}" placeholder="ingrese su rut" required="true"/>
+                    <p:message for="rut"/>
+
+                    <p:outputLabel value="Nombres: "/>
+                    <p:inputText id="nombres" value="#{clienteBean.clientenuevo.nombres}" placeholder="ingrese su nombre" required="true"/>
+                    <p:message for="nombres"/>
+
+                    <p:outputLabel value="Apellidos: "/>
+                    <p:inputText id="apellidos" value="#{clienteBean.clientenuevo.apellidos}" placeholder="ingrese sus apellidos" required="true"/>
+                    <p:message for="apellidos"/>
+
+                    <p:outputLabel value="celular: "/>
+                    <p:inputText id="celular" value="#{clienteBean.clientenuevo.celular}" placeholder="ingrese su numero de celular" required="true">
+                        <f:validateLength minimum="8" maximum="9"/>
+                    </p:inputText>
+                    <p:message for="celular"/>
+
+                    <p:outputLabel value="domicilio: "/>
+                    <p:inputText id="domicilio" value="#{clienteBean.clientenuevo.domicilio}" placeholder="ingrese su direccion" required="true"/>
+                    <p:message for="domicilio"/>
+
+                    <p:outputLabel value="email: "/>
+                    <p:inputText id="email" value="#{clienteBean.clientenuevo.email}" placeholder="ingrese su email" required="true">
+                        <f:validateRegex pattern=".+@.+\.[a-z]+"/>
+                    </p:inputText>
+                    <p:message for="email"/>
+
+                    <p:commandButton id="bt1" ajax="false" value="Enviar" action="#{clienteBean.eventoBotoningresarCliente()}"/>
+
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+
+        <h:form id="forming2" rendered="#{veterinarioBean.veterinario.rol ne 'VETERINARIOJEFE'}">
+            <br/><br/>
+            <h:graphicImage id="imagen2" alt="stop" url="./resources/img/stop.png" style="height: 80px"/>
+            <br/>
+            <h:outputText value="Ud. no tiene permiso para acceder a esta opcion!!!" style="font-size: 18px;color: red"/>
+            <br/><br/>
+            <h:link outcome="menu.xhtml" style="font-size: 18px;color: blue" value="Pinche aqui para Volver"/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        </h:form>
+
+    </ui:define>
+
+</ui:composition>
