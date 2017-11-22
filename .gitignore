@@ -20,3 +20,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/Proyecto-JSF-Maule-Pets/dist/
+maule_pets_ejb/build/generated-sources/ap-source-output/cl/modelo/pojos/Especie_.java
+maule_pets_ejb/build/generated-sources/ap-source-output/cl/modelo/pojos/Cliente_.java

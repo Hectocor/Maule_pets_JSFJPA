@@ -6,8 +6,6 @@
             <name>maule_pets_ejb</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
             <included-library dirs="200">file.reference.javax.persistence_2.1.0.v201304241213.jar</included-library>
-            <included-library dirs="200">libs.jpa20-persistence.classpath</included-library>
-            <included-library dirs="200">file.reference.javax.persistence_2.1.0.v201304241213.jar-1</included-library>
             <source-roots>
                 <root id="src.dir" name="Source Packages"/>
             </source-roots>
